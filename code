@@ -1,0 +1,22 @@
+# main.py
+import random
+number=random.randint(1,100)
+keepgoing=True
+guess=7
+print("I'm thinking of a number between 1-100")
+while keepgoing:
+  question=int(input("You have "+str(guess)+" guesses to get it right. Go!"))
+  if question<number:
+    print("Nope! That guess was too low")
+    guess-=1
+    print("You have "+str(guess)+" guesses left.")
+  elif question>number:
+    print("Nope that guess was too high")
+    guess-=1
+    print("You have "+str(guess)+" guesses left.")
+  elif question==number:
+    print("You got the number right!")
+    keepgoing=False
+  if guess==0:
+    keepgoing==False
+    print("You ran out of guesses!")
